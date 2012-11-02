@@ -1,0 +1,4 @@
+TODO:
+
+	Test MP Framework
+	Give another alternative to copyToClipboard, ie. create a dialog with the entire diary (with <br> and such) select so user can ctrl+c and ctrl+v
