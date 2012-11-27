@@ -51,9 +51,9 @@ Description.ext:
 
 Script Syntax:
 	
-	Call the next line locally for each player that you wish to run it, SCRIPT IS COMPLETELY LOCALIZED
+	Call the next line:
 
-	if (!isdedicated) then {nul = [] execVM "CRACK_NotePad\CRACK_notepad_init.sqf";};
+	nul = [] execVM "CRACK_NotePad\CRACK_notepad_init.sqf";
  
  
 =====================================
