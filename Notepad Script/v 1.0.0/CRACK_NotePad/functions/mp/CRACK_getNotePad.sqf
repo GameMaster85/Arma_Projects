@@ -1,6 +1,6 @@
 if (!isdedicated) then {
 	
-	_target = CRACK_easyvar_NotePadCopyTarget
+	_target = CRACK_easyvar_NotePadCopyTarget;
 	
 	_index = lbCurSel 1;
 	_title = lbText [1, _index];

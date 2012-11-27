@@ -22,6 +22,7 @@ _isDead = false;
 _isBlocked = false;
 _players = [];
 _players = playableunits;
+_visible = false;
 if ((typeName _players) != (typeName [])) then {_players = [player];}; // For singleplayer debugging + no errors
 
 if ((_players find _target) != -1) then {_isHuman = true; if ((side _target) == (side player)) then {_sameSide = true;};};
@@ -30,6 +31,11 @@ if (_players find (_target getvariable ["CRACK_gvar_thisUnitDied", 69]) != -1) t
 
 if (_target getvariable ["CRACK_var_NotePadCopyBlocked", false]) then {_isBlocked = true;};
 
+if (((_isHuman) AND (_sameSide) AND !(_isBlocked)) OR _isDead) then {
+	CRACK_easyvar_NotePadCopyTarget = _target;
+	_visible = true;
+};
+
 _menus = [
 	[
 		["main", "Main Menu", _menuRsc],
@@ -37,7 +43,7 @@ _menus = [
 			["Copy NotePad",
 				{ [_target] execVM "CRACK_NotePad\functions\mp\CRACK_copyNotePad.sqf"; },
 				"", "", "", -1,
-				1, (((_isHuman) AND (_sameSide) AND !(_isBlocked)) OR _isDead)
+				1, (_visible)
 			]
 		]
 	]

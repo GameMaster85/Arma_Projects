@@ -1,8 +1,7 @@
 if (!isdedicated) then {
 	
-	_target = _this select 0;
-	CRACK_easyvar_NotePadCopyTarget = _target;
-
+	_target = CRACK_easyvar_NotePadCopyTarget;
+	
 	while {CRACK_gvar_NotePadTransfer select 3 != 0} do {
 		
 		hintsilent "Waiting for Network Transfer Opening";

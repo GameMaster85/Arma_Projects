@@ -37,7 +37,7 @@ if (_isRequest == 1) then {
 		
 		_characterCount = count _characterArray;
 		
-		if (_characterCount > 2000) then {
+		if (_characterCount > 20000) then {
 			
 			_text = format["%1's NotePad contains over %2 Bytes of data - Too large to send", (name _player), _characterCount];
 			if (isserver) then {[_text, "CRACK_NotePad", [false, false, true] ] call CBA_fnc_debug;};
@@ -47,7 +47,7 @@ if (_isRequest == 1) then {
 				{
 					_characterArray = _characterArray + toArray(_x);
 				} foreach _titles;
-				if (_characterCount <= 2000) exitwith {};
+				if (_characterCount <= 20000) exitwith {};
 			} foreach _titles;
 			
 			_isTruncated = true;
@@ -99,7 +99,7 @@ if (_isRequest == 2) then {
 		
 		_characterCount = count _characterArray;
 		
-		if (_characterCount > 2000) then {
+		if (_characterCount > 20000) then {
 			
 			_text = format["%1's NotePad contains over %2 Bytes of data - Too large to send", (name _player), _characterCount];
 			if (isserver) then {[_text, "CRACK_NotePad", [false, false, true] ] call CBA_fnc_debug;};
@@ -109,7 +109,7 @@ if (_isRequest == 2) then {
 				{
 					_characterArray = _characterArray + toArray(_x);
 				} foreach _strings;
-				if (_characterCount <= 2000) exitwith {};
+				if (_characterCount <= 20000) exitwith {};
 			} foreach _strings;
 			
 			_isTruncated = true;
